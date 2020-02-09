@@ -27,7 +27,8 @@ var featuresGenerator = function (featuresVariantPar) {
   for (f < Math.ceil(Math.random() * featuresVariantPar.length); f++;) {
     features[f] = featuresVariantPar[f];
   }
-  return features;                                    };
+  return features;
+};
 featuresGenerator(featuresVariant);// генератор удобств
 var times = ['12:00', '13:00', '14:00'];
 var timesToGenerate = function (timesPar) {
@@ -97,5 +98,5 @@ var pinsDraw = function () {
     pinButtonImage.alt = ArrayMokis[j].offer.title;
     mapPins.appendChild(clonePinTemplate);
   } 
-  };
+};
 pinsDraw();// функция отрисовки обьектов
