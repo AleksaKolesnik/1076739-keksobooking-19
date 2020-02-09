@@ -97,6 +97,6 @@ var pinsDraw = function () {
     pinButtonImage.src = ArrayMokis[j].author.avatar;
     pinButtonImage.alt = ArrayMokis[j].offer.title;
     mapPins.appendChild(clonePinTemplate);
-  } 
+  }
 };
 pinsDraw();// функция отрисовки обьектов
