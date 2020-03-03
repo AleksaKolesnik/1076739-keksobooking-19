@@ -98,7 +98,7 @@ var pinMain = document.querySelector('.map__pin--main');
 pinMain.addEventListener('mousedown', function (evt) {
   if (evt.button === "0") {
     onPinButtonClick();  }
-};)
+});
 pinMain.addEventListener('keydown', function (evt) {
   if (evt.key === "Enter") {
     onPinButtonClick(); }
