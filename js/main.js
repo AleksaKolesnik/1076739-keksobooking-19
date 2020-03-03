@@ -84,24 +84,24 @@ for (var k = 0; k < fieldsets.length; k++) {
 }
 var inputAddress = document.querySelector('#address');
 var pinKeks = document.querySelector('.map__pin--main');
-
 var onPinButtonClick = function () {
   for (var c = 0; c < fieldsets.length; c++) {
     fieldsets[c].removeAttribute('disabled', 'disabled');
-}
+  }
   mapBlock.classList.remove('map--faded');
   adForm.classList.remove('ad-form--disabled');
   inputAddress.value = (parseInt(pinKeks.style.top, 10) + OFFSET_X) + ';' + (parseInt(pinKeks.style.left, 10) + OFFSET_Y);
 };
 var pinMain = document.querySelector('.map__pin--main');
-
 pinMain.addEventListener('mousedown', function (evt) {
-  if (evt.button === "0") {
-    onPinButtonClick();  }
+  if (evt.button === '0') {
+    onPinButtonClick();
+  }
 });
 pinMain.addEventListener('keydown', function (evt) {
-  if (evt.key === "Enter") {
-    onPinButtonClick(); }
+  if (evt.key === 'Enter') {
+    onPinButtonClick();
+  }
 });
 
 var capacity = document.querySelector('#capacity');// количество гостей
@@ -119,8 +119,8 @@ capacity.addEventListener('change', function () {
     capacity.setCustomValidity('слишком много');
   } else if ((roomNumber.value === '2') && (capacity.value === '0')) {
     capacity.setCustomValidity('только для гостей');
-  }else {
-  capacity.setCustomValidity('');
+  } else {
+    capacity.setCustomValidity('');
   }
 });
 
@@ -131,7 +131,7 @@ adForm.addEventListener('submit', function (evt) {
   } else if ((roomNumber.value === '100') && (capacity.value !== '0')) {
     evt.preventDefault();
     capacity.setCustomValidity('данный тип размещения не предусмотрен для гостей');
-  } else if ((roomNumber.value === '3') && (capacity.value === '0')){
+  } else if ((roomNumber.value === '3') && (capacity.value === '0')) {
     evt.preventDefault();
     capacity.setCustomValidity('данный тип размещения только для гостей');
   } else if ((roomNumber.value === '2') && (capacity.value === '3')) {
