@@ -145,8 +145,3 @@ adForm.addEventListener('submit', function (evt) {
   }
 });
 
-
-
-
-
-
