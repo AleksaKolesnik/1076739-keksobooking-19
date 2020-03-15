@@ -39,7 +39,7 @@
   timeOut.addEventListener('change', function () {
     if (timeIn.value !== timeOut.value) {
       timeOut.setCustomValidity('время должны совпадать');
-      } else {
+    } else {
       timeOut.setCustomValidity('');
     }
   });
