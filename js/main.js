@@ -19,7 +19,7 @@
   }; // функция обработчик при клике на метку включается содержимое и в поле адрес показываются текущие координаты метки
 
   window.card.pinMain.addEventListener('mousedown', function (evt) {
-    if (evt.button == '0') {
+    if (evt.button === 0) {
       onPinButtonClick();
     }
   });
@@ -39,7 +39,7 @@
   timeOut.addEventListener('change', function () {
     if (timeIn.value !== timeOut.value) {
       timeOut.setCustomValidity('время должны совпадать');
-      }  else {
+      } else {
       timeOut.setCustomValidity('');
     }
   });
@@ -47,7 +47,7 @@
   timeIn.addEventListener('change', function () {
     if (timeIn.value !== timeOut.value) {
       timeIn.setCustomValidity('время должны совпадать');
-    }  else {
+    } else {
       timeIn.setCustomValidity('');
     }
   });
@@ -57,14 +57,14 @@
       price.setAttribute('min', '0');
       price.placeholder = '0';
     } else if (typeRoom.value === 'flat') {
-        price.setAttribute('min', '1000');
-        price.placeholder = '1000';
+      price.setAttribute('min', '1000');
+      price.placeholder = '1000';
     } else if (typeRoom.value === 'house') {
-        price.setAttribute('min', '5000');
-        price.placeholder = '5000';
+      price.setAttribute('min', '5000');
+      price.placeholder = '5000';
     } else if (typeRoom.value === 'palace') {
-        price.setAttribute('min', '10000');
-        price.placeholder = '10000';
+      price.setAttribute('min', '10000');
+      price.placeholder = '10000';
     }
   });
 

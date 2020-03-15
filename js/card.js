@@ -50,8 +50,8 @@
         Img.style.height = '40px';
         popupPhotos.appendChild(Img);
       }
-  }
-  mapBlock.insertBefore(cloneCardTemplate, mapFilters);
+    }
+    mapBlock.insertBefore(cloneCardTemplate, mapFilters);
   };// функция отрисовки карточки обьекта
 
   cardDraw(0);
@@ -104,7 +104,7 @@
           popupPhotos.appendChild(Img);
         }
       }
-  mapBlock.insertBefore(cloneCardTemplate, mapFilters);
+      mapBlock.insertBefore(cloneCardTemplate, mapFilters);
     }
   };
 })();

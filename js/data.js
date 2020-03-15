@@ -58,5 +58,5 @@
     COUNT_PINS: COUNT_PINS,
     mapPins: mapPins,
     arrayMocks: arrayMocks
-  };  
+  };
 })();

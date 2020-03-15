@@ -5,7 +5,7 @@
   var pins = document.querySelectorAll('.map__pin');
   var adPins = [];
   for (var pinNumber = 0; pinNumber < pins.length; pinNumber++) {
-    if(!pins[pinNumber].classList.contains('map__pin--main')) {
+    if (!pins[pinNumber].classList.contains('map__pin--main')) {
       adPins.push(pins[pinNumber]);
     }
   }// массив меток исключающий первую
@@ -14,7 +14,7 @@
     var mapCard = mapBlock.querySelector('.map__card');
     var cardClose = mapBlock.querySelector('.popup__close');
     cardClose.addEventListener('click', function () {
-    mapBlock.removeChild(mapCard);
+      mapBlock.removeChild(mapCard);
     });
   };
   onCloseClick();
@@ -22,7 +22,7 @@
   var onAdPinClick = function (numCards) {
     adPins[numCards].addEventListener('click', function () {
       var mapCard = mapBlock.querySelector('.map__card');
-      if (mapCard){ 
+      if (mapCard) {
         mapBlock.removeChild(mapCard);
       }
       window.card.cardDraw(numCards);
@@ -35,7 +35,7 @@
     adPins[numCards].addEventListener('keydown', function (evt) {
       if (evt.key === 'Enter') {
         var mapCard = mapBlock.querySelector('.map__card');
-        if (mapCard){
+        if (mapCard) {
           mapBlock.removeChild(mapCard);
         }
         window.card.cardDraw(numCards);
