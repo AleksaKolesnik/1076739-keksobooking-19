@@ -1,0 +1,82 @@
+'use strict';
+
+(function () {
+  var mapBlock = document.querySelector('.map');
+  var pins = document.querySelectorAll('.map__pin');
+  var adPins = [];
+  for (var pinNumber = 0; pinNumber < pins.length; pinNumber++) {
+    if (!pins[pinNumber].classList.contains('map__pin--main')) {
+      adPins.push(pins[pinNumber]);
+    }
+  }// массив меток исключающий первую
+ 
+  var onCloseClick = function () {
+    var mapCard = mapBlock.querySelector('.map__card');
+    var cardClose = mapBlock.querySelector('.popup__close');
+    cardClose.addEventListener('click', function () {
+      mapBlock.removeChild(mapCard);
+    });
+  };
+  onCloseClick();
+
+  var onAdPinClick = function (numCards) {
+    adPins[numCards].addEventListener('click', function () {
+      var mapCard = mapBlock.querySelector('.map__card');
+      if (mapCard) {
+        mapBlock.removeChild(mapCard);
+      }
+        window.load(function (arrays) {
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(cardDraw(numCards, arrays));
+    mapBlock.insertBefore(fragment, mapFilters);
+  });
+      onCloseClick();
+      onCloseEsc();
+    });
+  };// клик по метке c отрисовкой карточки
+
+  var onAdPinEnterDown = function (numCards) {
+    adPins[numCards].addEventListener('keydown', function (evt) {
+      if (evt.key === 'Enter') {
+        var mapCard = mapBlock.querySelector('.map__card');
+        if (mapCard) {
+          mapBlock.removeChild(mapCard);
+        }
+           window.load(function (arrays) {
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(cardDraw(numCards, arrays));
+    mapBlock.insertBefore(fragment, mapFilters);
+  });
+        onCloseClick();
+        onCloseEsc();
+      }
+    });
+  };
+ 
+  var onCloseEsc = function () {
+    document.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape') {
+        var mapCard = mapBlock.querySelector('.map__card');
+        mapBlock.removeChild(mapCard);
+      }
+    });
+  };
+
+  onCloseEsc();
+  for (var numCards = 0; numCards < adPins.length; numCards++) {
+    onAdPinClick(numCards);
+    onAdPinEnterDown(numCards);
+  }// вещаем функию обработчик на каждую метку
+
+  window.map = {
+    mapBlock: mapBlock,
+    onCloseEsc: function () {
+      document.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Escape') {
+          var mapCard = mapBlock.querySelector('.map__card');
+          mapBlock.removeChild(mapCard);
+        }
+      });
+    },
+  };
+})();
