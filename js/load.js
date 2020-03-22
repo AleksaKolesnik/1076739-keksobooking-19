@@ -11,7 +11,7 @@
         onSuccess(xhr.response);
       } else {
         onError('Статус ответа: ' + xhr.status + ' ' + xhr.statusText);
-      } 
+      }
     });
     xhr.addEventListener('error', function () {
       onError('Произошла ошибка соединения, попробуйте позднее');
@@ -19,9 +19,7 @@
     xhr.addEventListener('timeout', function () {
       onError('Запрос не успел выполнится за ' + xhr.timeout + 'мс');
     });
-    
     xhr.timeout = 10000;
-    
     xhr.open('GET', URL);
     xhr.send();
   };

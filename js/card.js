@@ -1,17 +1,10 @@
 'use strict';
 
 (function () {
-  var mapBlock = document.querySelector('.map');
-  var pinMain = document.querySelector('.map__pin--main');
   var cardTemplate = document.querySelector('#card').content;
   var mapFilters = document.querySelector('.map__filters-container');
   // функция отрисовки карточки обьекта
-
- 
-  
-  
   window.card = {
-    pinMain: pinMain,
     cardDraw: function (arrayData) {
       var cloneCardTemplate = cardTemplate.cloneNode(true);
       var popopTitle = cloneCardTemplate.querySelector('.popup__title');

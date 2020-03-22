@@ -2,7 +2,7 @@
 
 (function () {
   var pinTemplate = document.querySelector('#pin').content;
-  window.pin.toDraw = function (arrayData) { 
+  window.pin.toDraw = function (arrayData) {
     var clonePinTemplate = pinTemplate.cloneNode(true);
     var pinButton = clonePinTemplate.querySelector('button');
     var pinButtonLocationX = arrayData.location.x - window.data.OFFSET_X;
@@ -11,7 +11,7 @@
     pinButton.style.top = pinButtonLocationY + 'px';
     var pinButtonImage = pinButton.querySelector('img');
     pinButtonImage.src = arrayData.author.avatar;
-    pinButtonImage.alt = arrayData.offer.title; 
+    pinButtonImage.alt = arrayData.offer.title;
     return clonePinTemplate;
   };// функция отрисовки обьектов*/
 })();

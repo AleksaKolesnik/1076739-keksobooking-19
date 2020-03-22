@@ -1,6 +1,6 @@
 'use strict';
-
 (function () {
+  var pinMain = document.querySelector('.map__pins');
   var adForm = document.querySelector('.ad-form');
   var fieldsets = document.querySelectorAll('fieldset');
   for (var k = 0; k < fieldsets.length; k++) {
@@ -19,14 +19,13 @@
   }; // функция обработчик при клике на метку включается содержимое и в поле адрес показываются текущие координаты метки
   var inputAdressToCalculate = function () {
     inputAddress.value = (parseInt(pinKeks.style.left, 10) + window.data.OFFSET_X) + ';' + (parseInt(pinKeks.style.top, 10) + window.data.OFFSET_Y);
-    console.log(window.data.OFFSET_X)
-  }
-  window.card.pinMain.addEventListener('mousedown', function (evt) {
+  };
+  pinMain.addEventListener('mousedown', function (evt) {
     if (evt.button === 0) {
       onPinButtonClick();
     }
   });
-  window.card.pinMain.addEventListener('keydown', function (evt) {
+  pinMain.addEventListener('keydown', function (evt) {
     if (evt.key === 'Enter') {
       onPinButtonClick();
     }
@@ -113,6 +112,6 @@
     inputAdressToCalculate: function () {
       inputAddress.value = (parseInt(pinKeks.style.left, 10) + window.data.OFFSET_X) + ';' + (parseInt(pinKeks.style.top, 10) + window.data.OFFSET_Y);
     }
-  }
+  };
 
 })();
