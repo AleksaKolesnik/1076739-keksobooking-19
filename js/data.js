@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var OFFSET_X = 25;
+  var OFFSET_X = 31;
   var OFFSET_Y = 70;
   var COUNT_PINS = 8;
 
@@ -46,7 +46,7 @@
                             'description': stringRandomToCreate(descriptions),
                             'photos': arrayRandomToCreate(photosAll)},
         'location': {
-          'x': OFFSET_X + Math.floor(Math.random() * (mapPinsWidth - OFFSET_X * 2)),
+          'x': Math.floor(Math.random() * (mapPinsWidth)),
           'y': 130 + Math.floor(Math.random() * (500))
         }};
     }
@@ -57,6 +57,7 @@
     OFFSET_Y: OFFSET_Y,
     COUNT_PINS: COUNT_PINS,
     mapPins: mapPins,
-    arrayMocks: arrayMocks
+    arrayMocks: arrayMocks,
+    mapPinsWidth: mapPinsWidth
   };
 })();

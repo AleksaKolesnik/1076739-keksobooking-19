@@ -15,9 +15,12 @@
     }
     window.map.mapBlock.classList.remove('map--faded');
     adForm.classList.remove('ad-form--disabled');
-    inputAddress.value = (parseInt(pinKeks.style.top, 10) + window.data.OFFSET_X) + ';' + (parseInt(pinKeks.style.left, 10) + window.data.OFFSET_Y);
+    inputAdressToCalculate();
   }; // функция обработчик при клике на метку включается содержимое и в поле адрес показываются текущие координаты метки
-
+  var inputAdressToCalculate = function () {
+    inputAddress.value = (parseInt(pinKeks.style.left, 10) + window.data.OFFSET_X) + ';' + (parseInt(pinKeks.style.top, 10) + window.data.OFFSET_Y);
+    console.log(window.data.OFFSET_X)
+  }
   window.card.pinMain.addEventListener('mousedown', function (evt) {
     if (evt.button === 0) {
       onPinButtonClick();
@@ -104,5 +107,12 @@
       capacity.setCustomValidity('');
     }
   });
+
+  window.main = {
+    pinKeks: pinKeks,
+    inputAdressToCalculate: function () {
+      inputAddress.value = (parseInt(pinKeks.style.left, 10) + window.data.OFFSET_X) + ';' + (parseInt(pinKeks.style.top, 10) + window.data.OFFSET_Y);
+    }
+  }
 
 })();
